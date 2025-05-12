@@ -1,0 +1,61 @@
+Encrypted Multi-User Credential Storage - Python Project
+========================================================
+
+Overview
+--------
+This Python script allows secure registration and login functionality for multiple users.
+User passwords are encrypted using Fernet (AES-based) symmetric encryption and stored in a local file.
+
+Features
+--------
+- Register multiple users with encrypted password storage.
+- Login by verifying credentials using decryption.
+- Hides password input during typing using getpass.
+- Stores credentials in a secure, readable format: username:encrypted_password
+- Prevents duplicate usernames.
+
+Files
+-----
+1. pass-store.py      - Main Python script for registration and login
+2. secret.key         - Generated encryption key (Do NOT commit this to a public repo)
+3. credentials.txt    - Stores usernames and their encrypted passwords
+4. read-me.txt        - This file
+
+Requirements
+------------
+- Python 3.x
+- cryptography package
+
+Install the required package using:
+    pip3 install cryptography
+
+How to Run (on macOS/Linux/Windows Terminal)
+--------------------------------------------
+1. Navigate to the script directory:
+    cd /path/to/project
+
+2. Run the script:
+    python3 pass-store.py
+
+3. Follow the prompts to register or login users.
+
+Security Note
+-------------
+- The encryption key (`secret.key`) must be kept safe. If it's lost, all stored passwords become unrecoverable.
+- Avoid committing `secret.key` and `credentials.txt` to version control unless it's for testing.
+
+Possible Enhancements
+---------------------
+- Add password complexity validation
+- Add password reset functionality
+- Use a hashed database backend instead of flat file
+- Add account lockout after multiple failed logins
+- Implement a GUI version using Tkinter or PyQt
+
+Author
+------
+Ajay (your name here)
+
+License
+-------
+MIT License (or choose your license)
